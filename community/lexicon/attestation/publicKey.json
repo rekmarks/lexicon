@@ -35,9 +35,10 @@
             "format": "datetime",
             "description": "The date and time the attestation was revoked"
           },
-          "tags": {
+          "purposes": {
             "type": "array",
-            "description": "Tags describing the purpose of the public key, for example 'pgp' or 'e2ee'",
+            "minLength": 1,
+            "description": "Strings describing the purpose(s) of the public key, for example 'pgp' or 'e2ee'",
             "items": {
               "type": "string"
             }
