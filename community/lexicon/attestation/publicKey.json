@@ -16,8 +16,8 @@
         "properties": {
           "attestedAt": {
             "type": "string",
-            "format": "datetime",
-            "description": "The date and time the public key was attested"
+            "description": "The date and time the public key was attested",
+            "format": "datetime"
           },
           "type": {
             "type": "string",
@@ -32,16 +32,16 @@
           },
           "revokedAt": {
             "type": "string",
-            "format": "datetime",
-            "description": "The date and time the attestation was revoked"
+            "description": "The date and time the attestation was revoked",
+            "format": "datetime"
           },
           "purposes": {
             "type": "array",
-            "minLength": 1,
             "description": "Strings describing the purpose(s) of the public key, for example 'pgp' or 'e2ee'",
             "items": {
               "type": "string"
-            }
+            },
+            "minLength": 1
           }
         }
       }
