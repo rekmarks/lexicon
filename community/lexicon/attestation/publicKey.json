@@ -1,0 +1,49 @@
+{
+  "lexicon": 1,
+  "id": "community.lexicon.attestation.publicKey",
+  "defs": {
+    "main": {
+      "type": "record",
+      "description": "Record attesting ownership of a public key",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": [
+          "attestedAt",
+          "publicKey",
+          "type"
+        ],
+        "properties": {
+          "attestedAt": {
+            "type": "string",
+            "format": "datetime",
+            "description": "The date and time the public key was attested"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of public key",
+            "knownValues": [
+              "ed25519"
+            ]
+          },
+          "publicKey": {
+            "type": "string",
+            "description": "The public key to attest to ownership of, in base64 format"
+          },
+          "revokedAt": {
+            "type": "string",
+            "format": "datetime",
+            "description": "The date and time the attestation was revoked"
+          },
+          "tags": {
+            "type": "array",
+            "description": "Tags describing the purpose of the public key, for example 'pgp' or 'e2ee'",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
